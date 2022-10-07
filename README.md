@@ -23,19 +23,20 @@ Introductory Knowledge of R & RStudio
 1. Login to GEMS Platform at https://gems.agroinformatics.org/webui/#
     - GEMS Platform uses Globus to authenticate your account, so if your institution is already linked to Globus (for example, University of Minnesota and many other universities), you can search and select your institution from the list and use your institutional account to log into GEMS Platform. Alternatively, you can log in using Google or ORCID iD, or create  your own Globus account to log in.   
 
-1. Once logged in, click `Analyze > JupyterLab` from the homepage
+2. Once logged in, click `Analyze > JupyterLab` from the homepage
 
-1. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
-2. 
+3. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
+![GEMS-R-Studio-Terminal](https://user-images.githubusercontent.com/104034405/194589310-cbf304e6-93cf-46e9-a058-b8eb04439665.png)
 
-1. In bash terminal, create directories for this class  
+
+4. In bash terminal, create directories for this class  
     ```shell
     mkdir classes  
     cd classes  
     mkdir GEMSX003  
     cd GEMSX003
     ```  
-1. Clone repository for this classes  
+5. Clone repository for this classes  
     ```shell
     git clone https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
     ```
