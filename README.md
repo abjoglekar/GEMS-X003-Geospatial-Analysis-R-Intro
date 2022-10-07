@@ -1,7 +1,7 @@
 <img src="images/GEMS Informatics Learning.png" width=600 alt="GEMS Learning Logo" title="GEMS Learning" />
 
-# GEMS Learning X003.0
-## Accounting for Location in Agriculture: An Introduction to Spatial Data Analysis in R
+# X003.0 An Introduction to Spatial Data Analysis in R
+## Accounting for Location in Agriculture
 
 This course is designed for those who are interested in explicitly accounting for location in their analyses. Through this 3-week introductory course, you will learn how to work with spatial data in R, starting from importing different spatial datasets and creating simple maps, to conducting basic geocomputation on vector and raster data. In each 2.5 hour lecture, you will have the opportunity to immediately practice your new skills via hands-on exercises focused on agri-food applications. 
 
