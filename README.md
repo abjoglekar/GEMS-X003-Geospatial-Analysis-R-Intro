@@ -1,4 +1,4 @@
-<img src="images/GEMS Informatics Learning.png.png" width=600 alt="GEMS Learning Logo" title="GEMS Learning" />
+<img src="images/GEMS Informatics Learning.png" width=600 alt="GEMS Learning Logo" title="GEMS Learning" />
 
 # Accounting for Location in Agriculture
 ## An introduction to Spatial Data Analysis in R
