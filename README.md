@@ -1,6 +1,6 @@
 <img src="images/GEMS Informatics Learning.png" width=600 alt="GEMS Learning Logo" title="GEMS Learning" />
 
-# GEMS Learning X003.0: 
+# GEMS Learning X003.0
 ## Accounting for Location in Agriculture: An Introduction to Spatial Data Analysis in R
 
 This course is designed for those who are interested in explicitly accounting for location in their analyses. Through this 3-week introductory course, you will learn how to work with spatial data in R, starting from importing different spatial datasets and creating simple maps, to conducting basic geocomputation on vector and raster data. In each 2.5 hour lecture, you will have the opportunity to immediately practice your new skills via hands-on exercises focused on agri-food applications. 
@@ -56,7 +56,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     git pull https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
     ```
 5. In your JupyterLab environment, open the directory `Intro-to-Spatial-Data-Analysis-in-R` and then open the relevant Jupyter Notebook to follow along throughout the class
-- Week 1: `x003_Module0_Intro.ipynb`
-- Week 2: `x003_Module0_Vector.ipynb`
-- Week 3: `x003_Module0_Raster.ipynb`  
+    - Week 1: `x003_Module0_Intro.ipynb`
+    - Week 2: `x003_Module0_Vector.ipynb`
+    - Week 3: `x003_Module0_Raster.ipynb`  
 
