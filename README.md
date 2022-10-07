@@ -6,9 +6,9 @@ GEMS Learning X003.0
 
 This course is designed for those who are interested in explicitly accounting for location in their analyses. Through this 3-week introductory course, you will learn how to work with spatial data in R, starting from importing different spatial datasets and creating simple maps, to conducting basic geocomputation on vector and raster data. In each 2.5 hour lecture, you will have the opportunity to immediately practice your new skills via hands-on exercises focused on agri-food applications. 
 
-  Week 1: Introduction to spatial data and mapping in R
-  Week 2: Basic geocomputation with vector data in R
-  Week 3: Basic geocomputation with raster data in R 
+- Week 1: Introduction to spatial data and mapping in R
+- Week 2: Basic geocomputation with vector data in R
+- Week 3: Basic geocomputation with raster data in R 
 
 The course will be delivered via a Jupyter Notebook hosted on the GEMS Informatics Platform. You do not need to have R or RStudio installed on your machine to participate
 
@@ -26,8 +26,6 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
 2. Once logged in, click `Analyze > JupyterLab` from the homepage
 
 3. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
-![GEMS-R-Studio-Terminal](https://user-images.githubusercontent.com/104034405/194589310-cbf304e6-93cf-46e9-a058-b8eb04439665.png)
-
 
 4. If the directories `classes\GEMSX003` were not created before, create directories for this class in the bash terminal using the following four commands  
     ```shell
