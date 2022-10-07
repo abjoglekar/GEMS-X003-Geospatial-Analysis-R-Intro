@@ -38,7 +38,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     
 5. Clone repository for this classes  
     ```shell
-    git clone https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
+    git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
 
 ## Weekly Class Instructions
@@ -56,7 +56,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     git pull https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
     ```
 
-5. In your JupyterLab environment, open the `Intro-to-Spatial-Data-Analysis-in-R/lectures` directory and then open the relevant Jupyter Notebook to follow along throughout the class
+5. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro/lectures` directory and then open the relevant Jupyter Notebook to follow along throughout the class
     - Week 1: `x003_Module0_Intro.ipynb`
     - Week 2: `x003_Module0_Vector.ipynb`
     - Week 3: `x003_Module0_Raster.ipynb`  
