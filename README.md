@@ -47,14 +47,18 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
 ## Weekly Class Instructions
 
 1. Log-in to GEMS Platform at https://gems.agroinformatics.org/
-2. Once logged in, click `Analyze > JupyterLab` from the homepage
-3. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
-4. From your bash terminal pull the most recent version of the class files using the following commands:
+
+3. Once logged in, click `Analyze > JupyterLab` from the homepage
+
+5. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
+
+7. From your bash terminal pull the most recent version of the class files using the following commands:
     ```shell
     cd classes
     cd GEMSX003
     git pull https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
     ```
+
 5. In your JupyterLab environment, open the directory `Intro-to-Spatial-Data-Analysis-in-R` and then open the relevant Jupyter Notebook to follow along throughout the class
     - Week 1: `x003_Module0_Intro.ipynb`
     - Week 2: `x003_Module0_Vector.ipynb`
