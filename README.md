@@ -1,7 +1,7 @@
 <img src="images/GEMS Informatics Learning.png" width=600 alt="GEMS Learning Logo" title="GEMS Learning" />
 
 # Accounting for Location in Agriculture
-## An introduction to Spatial Data Analysis in R
+## An Introduction to Spatial Data Analysis in R
 GEMS Learning X003.0
 
 This course is designed for those who are interested in explicitly accounting for location in their analyses. Through this 3-week introductory course, you will learn how to work with spatial data in R, starting from importing different spatial datasets and creating simple maps, to conducting basic geocomputation on vector and raster data. In each 2.5 hour lecture, you will have the opportunity to immediately practice your new skills via hands-on exercises focused on agri-food applications. 
@@ -14,6 +14,8 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
 
 
 ## Prerequisites: 
+Access to internet
+GEMS Platform user account
 Introductory Knowledge of R & RStudio  
 
 
@@ -24,6 +26,7 @@ Introductory Knowledge of R & RStudio
 1. Once logged in, click `Analyze > JupyterLab` from the homepage
 
 1. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
+2. 
 
 1. In bash terminal, create directories for this class  
     ```shell
