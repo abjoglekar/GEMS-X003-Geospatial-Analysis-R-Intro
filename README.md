@@ -55,5 +55,8 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     cd GEMSX003
     git pull https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
     ```
-5. In your JupyterLab environment, open the directory `Intro-to-Spatial-Data-Analysis-in-R` and then open the relevant Jupyter Notebook (i.e., `x003_Module0_Intro.ipynb`, `x003_Module0_Vector.ipynb`, or `x003_Module0_Raster.ipynb`) to follow along for the in-class exercises 
+5. In your JupyterLab environment, open the directory `Intro-to-Spatial-Data-Analysis-in-R` and then open the relevant Jupyter Notebook to follow along throughout the class
+- Week 1: `x003_Module0_Intro.ipynb`
+- Week 2: `x003_Module0_Vector.ipynb`
+- Week 3: `x003_Module0_Raster.ipynb`  
 
