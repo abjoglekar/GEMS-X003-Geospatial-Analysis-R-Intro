@@ -11,9 +11,9 @@ This course is designed for those who are interested in explicitly accounting fo
 The course will be delivered via a Jupyter Notebook hosted on the GEMS Informatics Platform. You do not need to have R or RStudio installed on your machine to participate.
 
 ## Prerequisites: 
-- Access to internet
-- [GEMS Platform](https://gems.agroinformatics.org/webui/#) user account
-- Introductory Knowledge of R & RStudio  
+- Access to the internet
+- A [GEMS Platform](https://gems.agroinformatics.org/webui/#) user account
+- Introductory knowledge of R & RStudio  
 
 ## Initial Setup
 1. Login to GEMS Platform at https://gems.agroinformatics.org/
