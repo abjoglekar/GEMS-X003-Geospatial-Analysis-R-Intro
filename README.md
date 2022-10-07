@@ -14,9 +14,9 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
 
 
 ## Prerequisites: 
-Access to internet
-GEMS Platform user account
-Introductory Knowledge of R & RStudio  
+- Access to internet
+- [GEMS Platform](https://gems.agroinformatics.org/webui/#) user account
+- Introductory Knowledge of R & RStudio  
 
 
 ## Class Setup
@@ -29,18 +29,24 @@ Introductory Knowledge of R & RStudio
 ![GEMS-R-Studio-Terminal](https://user-images.githubusercontent.com/104034405/194589310-cbf304e6-93cf-46e9-a058-b8eb04439665.png)
 
 
-4. In bash terminal, create directories for this class  
+4. If the directories `classes\GEMSX003` were not created before, create directories for this class in the bash terminal using the following four commands  
     ```shell
     mkdir classes  
     cd classes  
     mkdir GEMSX003  
     cd GEMSX003
     ```  
+    If these directories alread exist, use the following commands to change to this directory
+    ```shell
+    cd classes
+    cd GEMSX003
+    ```
+    
 5. Clone repository for this classes  
     ```shell
     git clone https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
     ```
 
 ## Class and Exercises
-In your JupyterLab environment, open the newly cloned directory `Intro-to-Spatial-Data-Analysis-in-R` and then open `x003.0_Module1_Intro.ipynb` to follow along for in-class exercises 
+In your JupyterLab environment, open the newly cloned directory `Intro-to-Spatial-Data-Analysis-in-R` and then open `x003_Module0_Intro.ipynb` to follow along for in-class exercises 
 
