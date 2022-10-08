@@ -15,7 +15,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
 - A [GEMS Platform](https://gems.agroinformatics.org/webui/#) user account
 - Introductory knowledge of R & RStudio  
 
-## Initial Setup
+## Class Setup
 1. Login to GEMS Platform at https://gems.agroinformatics.org/
     - GEMS Platform uses Globus to authenticate your account, so if your institution is already linked to Globus (for example, University of Minnesota and many other universities), you can search and select your institution from the list and use your institutional account to log into GEMS Platform. Alternatively, you can log in using Google or ORCID iD, or create  your own Globus account to log in.   
 
@@ -30,7 +30,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     mkdir GEMSX003  
     cd GEMSX003
     ```  
-    If these directories alread exist, use the following commands to change to this directory
+    If these directories already exist, use the following commands to change to this directory
     ```shell
     cd classes
     cd GEMSX003
@@ -40,24 +40,5 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     ```shell
     git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
-
-## Weekly Class Instructions
-
-1. Log-in to GEMS Platform at https://gems.agroinformatics.org/
-
-3. Once logged in, click `Analyze > JupyterLab` from the homepage
-
-5. Open a bash terminal by clicking 'Terminal' icon in the Launcher **OR** by clicking `File > New > Terminal`
-
-7. From your bash terminal pull the most recent version of the class files using the following commands:
-    ```shell
-    cd classes
-    cd GEMSX003
-    git pull https://github.com/abjoglekar/Intro-to-Spatial-Data-Analysis-in-R.git
-    ```
-
-5. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro/lectures` directory and then open the relevant Jupyter Notebook to follow along throughout the class
-    - Week 1: `x003_Module0_Intro.ipynb`
-    - Week 2: `x003_Module0_Vector.ipynb`
-    - Week 3: `x003_Module0_Raster.ipynb`  
+6. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro/lectures` directory and then open the `x003_Module0_Intro.ipynb` Jupyter Notebook to follow along throughout the class 
 
