@@ -15,7 +15,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
 - A [GEMS Platform](https://gems.agroinformatics.org/webui/#) user account
 - Introductory knowledge of R & RStudio  
 
-## Class Setup
+## Initial Setup
 1. Login to GEMS Platform at https://gems.agroinformatics.org/
     - GEMS Platform uses Globus to authenticate your account, so if your institution is already linked to Globus (for example, University of Minnesota and many other universities), you can search and select your institution from the list and use your institutional account to log into GEMS Platform. Alternatively, you can log in using Google or ORCID iD, or create  your own Globus account to log in.   
 
@@ -35,10 +35,15 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     cd classes
     cd GEMSX003
     ```
-    
-5. Clone repository for this week's lecture  
+## Weekly Lecture
+1. Navigate to your `GEMSX003` directory using the following commands:
+    ```shell
+    cd classes
+    cd GEMSX003
+    ```
+2. Clone the git repository for this week's lecture  
     ```shell
     git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
-6. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro` directory and then open the `x003_Module0_Intro.ipynb` Jupyter Notebook to follow along throughout the class 
+3. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro` directory and then open the `x003_Module0_Intro.ipynb` Jupyter Notebook to follow along throughout the class 
 
