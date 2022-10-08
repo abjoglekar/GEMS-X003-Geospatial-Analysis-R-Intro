@@ -40,5 +40,5 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     ```shell
     git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
-6. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro/lectures` directory and then open the `x003_Module0_Intro.ipynb` Jupyter Notebook to follow along throughout the class 
+6. In your JupyterLab environment, open the `GEMS-X003-Geospatial-Analysis-R-Intro` directory and then open the `x003_Module0_Intro.ipynb` Jupyter Notebook to follow along throughout the class 
 
