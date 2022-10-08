@@ -36,7 +36,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     cd GEMSX003
     ```
     
-5. Clone repository for this classes  
+5. Clone repository for this week's lecture  
     ```shell
     git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
