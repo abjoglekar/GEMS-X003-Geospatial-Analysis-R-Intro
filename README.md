@@ -21,7 +21,7 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     
 2. Once logged in, click `Analyze > RStudio` from the homepage (top right corner). If you do not have an `Analyze` option next to `Data Products` and `My Workspace` please let your TA know immediately. They will need to assign you permissions using their administrator account. 
 
-3. Install packages needed for course. This might take a awhile (upwards of 15 minutes), so we want to get started right away. If you have any issues please reference the R Troubleshooting document on Canvas and/or let your TA know immediately. 
+3. Install packages needed for course. This might take awhile (upwards of 15 minutes), so we want to get started right away. If you have any issues please reference the R Troubleshooting document on Canvas and/or let your TA know immediately. 
     ```shell
     
     # the `stars` and `tmaptools` packages are explicitly installed to enable
