@@ -81,11 +81,14 @@ In this example, we will use three data sets from the Minnesota Geospatial Commo
 
 ### Importing XY data
 
-Our first step is to read in the .csv file that contains our attribute data and geocordinates. For this example, we will be using the *Minnesota Six-Inch Soil Temperature* data.
+Our first step is to read in the .csv file that contains our attribute data and geocordinates.
+For this example, we will be using the *Minnesota Six-Inch Soil Temperature* data.
 
-> The Minnesota Department of Agriculture (MDA) Six-Inch Soil Temperature Network provides real time soil temperatures at locations across Minnesota. The network was established to assist in following best management practices for fall nitrogen fertilizer application which refer to a soil temperature at a six-inch depth.
+> The Minnesota Department of Agriculture (MDA) Six-Inch Soil Temperature Network provides real time soil temperatures at locations across Minnesota.
+> The network was established to assist in following best management practices for fall nitrogen fertilizer application which refer to a soil temperature at a six-inch depth.
 
-For today's workshop, a random October 5, 2021 temperature has been added for illustrative purposes. We first read in the .csv data.
+For today's workshop, a random October 5, 2021 temperature has been added for illustrative purposes.
+We first read in the .csv data.
 
 ```{r}
 soil_samp <- read.csv("../data/MN/soil_samp/soil_samp_2021-10-05.csv")
@@ -100,7 +103,8 @@ After identifying the longitude (x) and latitude (y) coordinates, we convert the
 soil_samp <- st_as_sf(soil_samp, coords = c("x","y"))
 ```
 
-We're setting the coordinate reference system (crs) to WGS84. This is represented by the European Petroleum Survey Group (EPSG) Code: 4326
+We're setting the coordinate reference system (crs) to WGS84.
+This is represented by the European Petroleum Survey Group (EPSG) Code: 4326
 
 ### Summarizing Point Data
 
@@ -165,7 +169,7 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
 ```{r}
 # Use this code block to work through the exercise
-# Answers are available in separate .RMD file for Exercise 2
+# Answers are available in separate .RMD file for Exercise 1
 ```
 
 ------------------------------------------------------------------------
@@ -178,7 +182,7 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
 ```{r}
 # Use this code block to work through the exercise
-# Answers are available in separate .RMD file for Exercise 2
+# Answers are available in separate .RMD file for Exercise 1
 ```
 
 ------------------------------------------------------------------------
@@ -195,7 +199,7 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
 ```{r}
 # Use this code block to work through the exercise
-# Answers are available in separate .RMD file for Exercise 2
+# Answers are available in separate .RMD file for Exercise 1
 ```
 
 ------------------------------------------------------------------------
@@ -204,11 +208,14 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
 ### Importing Shapefiles
 
-Our first step is to read in the .shp file that contains our attribute data and geometry data. For this example, we will be using the *Groundwater Provinces of Minnesota 2021* data.
+Our first step is to read in the .shp file that contains our attribute data and geometry data.
+For this example, we will be using the *Groundwater Provinces of Minnesota 2021* data.
 
-> The Minnesota Groundwater Provinces map summarizes aquifer and groundwater resource differences at the regional level. Some parts of the state have several groundwater resources to choose from, while other parts of the state may have only limited groundwater resources available.
+> The Minnesota Groundwater Provinces map summarizes aquifer and groundwater resource differences at the regional level.
+> Some parts of the state have several groundwater resources to choose from, while other parts of the state may have only limited groundwater resources available.
 
-For today's workshop, 3 random variables have been added as fields for illustrative purposes. We read in vector data using the `sf` package.
+For today's workshop, 3 random variables have been added as fields for illustrative purposes.
+We read in vector data using the `sf` package.
 
 ```{r}
 gw_prov <- st_read("../data/MN/gw_prov") #shapefiles called only using data source name (dsn)
@@ -292,7 +299,7 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 3
+    # Answers are available in separate .RMD file for Exercise 2
     ```
 
     ------------------------------------------------------------------------
@@ -309,7 +316,7 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 3
+    # Answers are available in separate .RMD file for Exercise 2
     ```
 
     ------------------------------------------------------------------------
@@ -328,7 +335,7 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 3
+    # Answers are available in separate .RMD file for Exercise 2
     ```
 
     ------------------------------------------------------------------------
@@ -337,11 +344,13 @@ For today's workshop, the data has been downloaded, cleaned, transformed, and sa
 
 ### Importing Raster Files
 
-Our first step is to read in the raster file that contains our data. For this example, we will be using the *Cropland Data Layer 2020, Minnesota* data.
+Our first step is to read in the raster file that contains our data.
+For this example, we will be using the *Cropland Data Layer 2020, Minnesota* data.
 
 > The United States Department of Agriculture (USDA), National Agricultural Statistics Service (NASS) Cropland Data Layer (CDL) is a raster, geo-referenced, crop-specific land cover data layer.
 
-For today's workshop, the data has been transformed to represent 3 categories: non-cropland (0), corn (1), and other cropland (2). We read in raster data using the `terra` package.
+For today's workshop, the data has been transformed to represent 3 categories: non-cropland (0), corn (1), and other cropland (2).
+We read in raster data using the `terra` package.
 
 ```{r}
 cdl <- rast("../data/MN/cdl_2020/cdl3_3km.tif") 
@@ -411,19 +420,18 @@ The data will be downloaded directly using the `geodata::elevation_30s()` functi
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 4
+    # Answers are available in separate .RMD file for Exercise 3
     ```
 
     ------------------------------------------------------------------------
 
-```{=html}
 <!-- -->
-```
+
 2.  Set coordinate reference system using the command `crs(mwi_dem) <- "epsg:4326"`
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 4
+    # Answers are available in separate .RMD file for Exercise 3
     ```
 
     ------------------------------------------------------------------------
@@ -440,7 +448,7 @@ The data will be downloaded directly using the `geodata::elevation_30s()` functi
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 4
+    # Answers are available in separate .RMD file for Exercise 3
     ```
 
     ------------------------------------------------------------------------
@@ -453,7 +461,7 @@ The data will be downloaded directly using the `geodata::elevation_30s()` functi
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 4
+    # Answers are available in separate .RMD file for Exercise 3
     ```
 
     ------------------------------------------------------------------------
@@ -489,5 +497,5 @@ I recommend using the Color Brewer website to pick color palettes for your maps:
 
     ```{r}
     # Use this code block to work through the exercise
-    # Answers are available in separate .RMD file for Exercise 5
+    # Answers are available in separate .RMD file for Exercise 4
     ```
