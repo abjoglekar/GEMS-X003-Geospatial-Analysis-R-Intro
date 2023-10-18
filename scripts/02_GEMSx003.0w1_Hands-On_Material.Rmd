@@ -1,0 +1,493 @@
+---
+title: "02_GEMSx003.0w1_Hands-On_Material"
+output: html_document
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r shpExt, fig.align="center", out.width = '100%', echo = F}
+knitr::include_graphics("../images/GEMS Informatics Learning.png")
+```
+
+# Introduction to Spatial Data Analysis in R
+
+## Instructors:
+
+Ali Joglekar, University of Minnesota ([joglekar\@umn.edu](mailto:joglekar@umn.edu))\
+Yuan Chai, University of Minnesota ([chaix026\@umn.edu](mailto:chaix026@umn.edu))
+
+------------------------------------------------------------------------
+
+## Hands-On Material Outline
+
+-   [I/O Point Data & Basic Maps](#Point)
+
+    -   [Exercise 1](#Ex2)
+
+-   [I/O Polygon Data & Basic Maps](#Polygon)
+
+    -   [Exercise 2](#Ex3)
+
+-   [I/O Raster Data & Basic Maps](#Raster)
+
+    -   [Exercise 3](#Ex4)
+
+-   [Layering Features in Maps](#Map)
+
+    -   [Exercise 4](#Ex5)
+
+## Setup
+
+### Load R Libraries
+
+```{r libraries}
+packages_to_load <- c("sf", "terra", "tmap", "geodata")
+
+for ( package in packages_to_load ) {
+    # Check if package is already installed, if not, install and load the package
+    if (!require(package, character.only=T, quietly=T, warn.conflicts=F)) {
+        install.packages(package)
+        suppressPackageStartupMessages(library(package, character.only=T, quietly=T, warn.conflicts=F))
+    }
+}
+```
+
+Note: For your own work, once packages are installed, it is recommended to just use `library()` to load your packages
+
+```{r eval=FALSE}
+# Spatial data libraries
+library(sf)
+library(terra)
+library(geodata)
+
+# Plotting libraries
+library(tmap)
+```
+
+### Data
+
+In this example, we will use three data sets from the Minnesota Geospatial Commons, which have been downloaded, cleaned, transformed and saved in the directory `../data/MN` for this workshop.
+
+1.  Minnesota Six-Inch Soil Temperature: <https://gisdata.mn.gov/dataset/geos-soil-temp-network>
+2.  Groundwater Provinces of Minnesota 2021: <https://gisdata.mn.gov/dataset/geos-groundwater-provinces-mn>
+3.  Cropland Data Layer 2020, Minnesota: <https://gisdata.mn.gov/dataset/agri-cropland-data-layer-2020>
+
+------------------------------------------------------------------------
+
+## **Working with Spatial Points Data in R** {#Point}
+
+### Importing XY data
+
+Our first step is to read in the .csv file that contains our attribute data and geocordinates. For this example, we will be using the *Minnesota Six-Inch Soil Temperature* data.
+
+> The Minnesota Department of Agriculture (MDA) Six-Inch Soil Temperature Network provides real time soil temperatures at locations across Minnesota. The network was established to assist in following best management practices for fall nitrogen fertilizer application which refer to a soil temperature at a six-inch depth.
+
+For today's workshop, a random October 5, 2021 temperature has been added for illustrative purposes. We first read in the .csv data.
+
+```{r}
+soil_samp <- read.csv("../data/MN/soil_samp/soil_samp_2021-10-05.csv")
+head(soil_samp)
+```
+
+### Converting to `sf` Object
+
+After identifying the longitude (x) and latitude (y) coordinates, we convert the *xy* data to an `sf` object using `st_as_sf`.
+
+```{r}
+soil_samp <- st_as_sf(soil_samp, coords = c("x","y"))
+```
+
+We're setting the coordinate reference system (crs) to WGS84. This is represented by the European Petroleum Survey Group (EPSG) Code: 4326
+
+### Summarizing Point Data
+
+```{r}
+head(soil_samp) #print data (top 6 rows)
+```
+
+```{r}
+st_bbox(soil_samp) #bounding box
+```
+
+```{r}
+st_crs(soil_samp) #coordinate reference system
+```
+
+```{r}
+st_crs(soil_samp) = 4326 #set crs to wgs84
+st_crs(soil_samp)
+```
+
+```{r}
+summary(soil_samp) #summary statistics
+```
+
+### Simple Maps from Point Data
+
+```{r}
+plot(st_geometry(soil_samp))  #plots geometry
+```
+
+#### plotting with `base R`
+
+```{r}
+#plots multiple variables
+plot(soil_samp)
+```
+
+```{r}
+#plots single variable
+plot(soil_samp["temp_20211005"])
+```
+
+#### plotting with `tmap`
+
+```{r}
+tm_shape(soil_samp) +
+  tm_dots("temp_20211005", size = 0.3)
+```
+
+### Export Points Data
+
+`st_write(obj, "./path/.../filename.shp")`
+
+### **Exercise 1: Explore Malawi LSMS Wave 5 (Point) Data** {#Ex2}
+
+> *Data Source:*\
+> Malawi Living Standard Measurement Survey Integrated Household Sample (LSMS-IHS) Data Wave 5 Data is available from <https://microdata.worldbank.org/index.php/catalog/3818>
+
+For today's workshop, the data has been downloaded, cleaned, transformed, and saved in the directory `../data/MWI`.
+
+1.  Read-in the enumeration area geo-coordinates `ea_geo.csv` file.
+
+```{r}
+# Use this code block to work through the exercise
+# Answers are available in separate .RMD file for Exercise 2
+```
+
+------------------------------------------------------------------------
+
+2.  Identify the coordinate variables.
+
+------------------------------------------------------------------------
+
+3.  Convert data.frame object into an `sf` POINT object (assume a WGS84 CRS) and explore the data.
+
+```{r}
+# Use this code block to work through the exercise
+# Answers are available in separate .RMD file for Exercise 2
+```
+
+------------------------------------------------------------------------
+
+4.  Create some maps
+
+    1.  Plot a map of the geometry of the points in base R.
+
+    2.  Plot a map of all of variables in base R.
+
+    3.  Plot a map of the `dist_road` variable in base R.
+
+    4.  Plot a map of the `dist_road` variable in tmap.
+
+```{r}
+# Use this code block to work through the exercise
+# Answers are available in separate .RMD file for Exercise 2
+```
+
+------------------------------------------------------------------------
+
+## **Working with Polygon Data in R** {#Polygon}
+
+### Importing Shapefiles
+
+Our first step is to read in the .shp file that contains our attribute data and geometry data. For this example, we will be using the *Groundwater Provinces of Minnesota 2021* data.
+
+> The Minnesota Groundwater Provinces map summarizes aquifer and groundwater resource differences at the regional level. Some parts of the state have several groundwater resources to choose from, while other parts of the state may have only limited groundwater resources available.
+
+For today's workshop, 3 random variables have been added as fields for illustrative purposes. We read in vector data using the `sf` package.
+
+```{r}
+gw_prov <- st_read("../data/MN/gw_prov") #shapefiles called only using data source name (dsn)
+```
+
+### Summarizing Polygon Data
+
+```{r}
+head(gw_prov) #print data (top 6 rows)
+```
+
+```{r}
+st_bbox(gw_prov) #bounding box
+```
+
+```{r}
+st_crs(gw_prov) #coordinate reference system
+```
+
+```{r}
+summary(gw_prov) #summary statistics
+```
+
+### Simple Choropleth Maps from Polygon Data
+
+```{r}
+plot(st_geometry(gw_prov))  #plots geometry
+```
+
+#### plotting with `base R`
+
+```{r}
+#plots multiple variables
+plot(gw_prov)
+```
+
+```{r}
+#plots single variable
+plot(gw_prov["var3"])
+```
+
+#### plotting with `tmap`
+
+```{r}
+tm_shape(gw_prov) + 
+  tm_borders("red") +
+  tm_fill(col = "var3") +
+  tm_layout(legend.outside = TRUE)  #several more options available to clean up legend
+```
+
+### Transform CRS
+
+Use `st_transform()` to transform or convert coordinates of simple feature
+
+```{r}
+gw_prov_albers <- st_transform(gw_prov, crs = 9001)
+```
+
+```{r}
+par(mfrow = c(1,2))
+plot(st_geometry(gw_prov), main = "UTM zone 15N")
+plot(st_geometry(gw_prov_albers), main = "Albers Equal Area")
+```
+
+Note: using `st_crs` to transform an sf object CRS will not reproject the object into the new CRS, it will only assign an incorrect CRS
+
+### Export Polygon Data
+
+`st_write(obj, "./path/.../filename.shp")`
+
+### **Exercise 2: Explore Malawi LSMS Wave 5 (Polygon) Data** {#Ex3}
+
+> *Data Source:*\
+> Malawi Living Standard Measurement Survey Integrated Household Sample (LSMS-IHS) Data Wave 5 Data is available from <https://microdata.worldbank.org/index.php/catalog/3818>
+>
+> The Shapefile can be downloaded from <https://data.humdata.org/dataset/malawi-administrative-level-0-3-boundaries>
+
+For today's workshop, the data has been downloaded, cleaned, transformed, and saved in the directory `../data/MWI`.
+
+1.  Read-in the `mwi_lsms` shapefile located in the `../data/MWI` folder.
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 3
+    ```
+
+    ------------------------------------------------------------------------
+
+<!-- -->
+
+2.  Explore the characteristics of your shapefile.
+
+    1.  How many features does it have?
+
+    2.  How many fields does it have?
+
+    3.  Calculate the summary statistics of the field data.
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 3
+    ```
+
+    ------------------------------------------------------------------------
+
+<!-- -->
+
+3.  Create some choropleth maps
+
+    1.  Plot a map of the outline of Malawi districts (ADM2 units) in base R.
+
+    2.  Plot a map of all of first 18 variables in base R.
+
+    3.  Plot a map of the `poverty` variable in base R.
+
+    4.  Plot a map of the `poverty` variable in tmap.
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 3
+    ```
+
+    ------------------------------------------------------------------------
+
+## **Working with Raster Data in R** {#Raster}
+
+### Importing Raster Files
+
+Our first step is to read in the raster file that contains our data. For this example, we will be using the *Cropland Data Layer 2020, Minnesota* data.
+
+> The United States Department of Agriculture (USDA), National Agricultural Statistics Service (NASS) Cropland Data Layer (CDL) is a raster, geo-referenced, crop-specific land cover data layer.
+
+For today's workshop, the data has been transformed to represent 3 categories: non-cropland (0), corn (1), and other cropland (2). We read in raster data using the `terra` package.
+
+```{r}
+cdl <- rast("../data/MN/cdl_2020/cdl3_3km.tif") 
+cdl
+```
+
+### Summarizing Raster Data
+
+```{r}
+nrow(cdl)   #number of rows
+```
+
+```{r}
+ncol(cdl)   #number of columns
+```
+
+```{r}
+ncell(cdl)  #number of cells
+```
+
+```{r}
+res(cdl)    #resolution
+```
+
+```{r}
+ext(cdl)    #bounding box
+```
+
+```{r}
+crs(cdl)    #coordinate reference system
+```
+
+```{r}
+hist(cdl)   #histogram of values
+```
+
+### Simple Maps from Raster Data
+
+#### plotting with `base R`
+
+```{r}
+plot(cdl)
+```
+
+#### plotting with `tmap`
+
+```{r}
+tm_shape(cdl) + 
+  tm_raster() +
+  tm_layout(legend.outside = TRUE)
+```
+
+### Export Raster Data
+
+`writeRaster(obj, "./path/.../filename.tif", overwrite=TRUE)`
+
+I recommend you write out your raster objects as GeoTiff files
+
+### **Exercise 3: Explore Malawi LSMS Wave 5 (Raster) Data** {#Ex4}
+
+> *Data Source:*\
+> The data were aggregated from SRTM 90 m resolution data between -60 and 60 latitude.
+
+The data will be downloaded directly using the `geodata::elevation_30s()` function in R
+
+1.  Using the command `mwi_dem <- elevation_30s(country='MWI', mask=TRUE, path = "../data/MWI")`, download the digital elevation model (dem) data for Malawi.
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 4
+    ```
+
+    ------------------------------------------------------------------------
+
+```{=html}
+<!-- -->
+```
+2.  Set coordinate reference system using the command `crs(mwi_dem) <- "epsg:4326"`
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 4
+    ```
+
+    ------------------------------------------------------------------------
+
+3.  Explore the characteristics of your raster.
+
+    1.  How many rows and columns does it have?
+
+    2.  What is the resolution?
+
+    3.  What is the coordinate reference system?
+
+    4.  What is the distribution of values?
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 4
+    ```
+
+    ------------------------------------------------------------------------
+
+4.  Create some maps
+
+    1.  Plot a map of elevation in base R.
+
+    2.  Plot a map of elevation in tmap.
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 4
+    ```
+
+    ------------------------------------------------------------------------
+
+## **Layering Features** {#Map}
+
+Now that you know how to import and map vector and raster data you can start layering muliple objects on top of one another in your maps.
+
+```{r}
+tm_shape(cdl) + tm_raster(title = "Land Class", palette = "Set2") +
+  tm_shape(gw_prov) + tm_borders() + 
+  tm_shape(soil_samp) + tm_bubbles("temp_20211005", size = 0.2, palette = "Greys") +
+  tm_layout(legend.outside = TRUE)
+```
+
+### Picking Colors
+
+I recommend using the Color Brewer website to pick color palettes for your maps: <https://colorbrewer2.org/>
+
+### Export tmap Images
+
+`tmap_save(obj, "./path/.../filename.png", height = 4, width = 6, unit = "in")`
+
+### **Exercise 4: Maps with Multiple Features** {#Ex5}
+
+1.  Create a `tmap` object with three features
+
+    1.  Malawi DEM (raster)
+
+    2.  Malawi district boundaries borders (polygon)
+
+    3.  Malawi LSMS surveyed enumeration areas (point)
+
+    ```{r}
+    # Use this code block to work through the exercise
+    # Answers are available in separate .RMD file for Exercise 5
+    ```
