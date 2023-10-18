@@ -58,5 +58,5 @@ The course will be delivered via R Markdown files hosted on the GEMS Informatics
     ```shell
     git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
-3. From your files, navigate to your `GEMS-X003-Geospatial-Analysis-R-Intro\scripts` directory and open the `02_GEMSX003.0_Points.Rmd` R Markdown file to follow along for the first hands on component. 
+3. From your files, navigate to your `GEMS-X003-Geospatial-Analysis-R-Intro\scripts` directory and open the `02_GEMSX003.0w1_Hands-On_Material.Rmd` R Markdown file to follow along for the hands-on component. 
 
