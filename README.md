@@ -8,7 +8,7 @@ This course is designed for those who are interested in explicitly accounting fo
 - Week 2: Basic geocomputation with vector data in R
 - Week 3: Basic geocomputation with raster data in R 
 
-The course will be delivered via a Jupyter Notebook hosted on the GEMS Informatics Platform. You do not need to have R or RStudio installed on your machine to participate.
+The course will be delivered via R Markdown files hosted on the GEMS Informatics Platform. You do not need to have R or RStudio installed on your machine to participate.
 
 ## Prerequisites: 
 - Access to the internet
@@ -58,5 +58,5 @@ The course will be delivered via a Jupyter Notebook hosted on the GEMS Informati
     ```shell
     git clone https://github.com/abjoglekar/GEMS-X003-Geospatial-Analysis-R-Intro.git
     ```
-3. From your files, navigate to your `GEMS-X003-Geospatial-Analysis-R-Intro > scripts` directory and open the `02_GEMSX003.0_Points.Rmd` R Markdown file to follow along for the first hands on component. 
+3. From your files, navigate to your `GEMS-X003-Geospatial-Analysis-R-Intro\scripts` directory and open the `02_GEMSX003.0_Points.Rmd` R Markdown file to follow along for the first hands on component. 
 
