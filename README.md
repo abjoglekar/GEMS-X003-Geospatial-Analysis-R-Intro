@@ -23,7 +23,7 @@ The course will be delivered via R Markdown files hosted on the GEMS Informatics
 
 3. Install packages needed for course. If you have any issues please let your TA know immediately. 
     ```shell
-    packages_to_install <- c("tmap", "geodata")
+    packages_to_install <- c("sf", "terra", "tmap", "geodata")
     
     for ( package in packages_to_install ) {
         if (!require(package, character.only=T, quietly=T, warn.conflicts=F)) {
