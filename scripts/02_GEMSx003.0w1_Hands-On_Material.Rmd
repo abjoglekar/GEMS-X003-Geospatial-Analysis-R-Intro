@@ -44,20 +44,6 @@ Yuan Chai, University of Minnesota ([chaix026\@umn.edu](mailto:chaix026@umn.edu)
 ### Load R Libraries
 
 ```{r libraries}
-packages_to_load <- c("sf", "terra", "tmap", "geodata")
-
-for ( package in packages_to_load ) {
-    # Check if package is already installed, if not, install and load the package
-    if (!require(package, character.only=T, quietly=T, warn.conflicts=F)) {
-        install.packages(package)
-        suppressPackageStartupMessages(library(package, character.only=T, quietly=T, warn.conflicts=F))
-    }
-}
-```
-
-Note: For your own work, once packages are installed, it is recommended to just use `library()` to load your packages
-
-```{r eval=FALSE}
 # Spatial data libraries
 library(sf)
 library(terra)
