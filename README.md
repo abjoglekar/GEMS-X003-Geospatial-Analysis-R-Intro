@@ -8,8 +8,6 @@ This course is designed for those who are interested in explicitly accounting fo
 - Week 2: Basic geocomputation with vector data in R
 - Week 3: Basic geocomputation with raster data in R 
 
-The course will be delivered via R Markdown files hosted on the GEMS Informatics Platform. You do not need to have R or RStudio installed on your machine to participate.
-
 ## Prerequisites: 
 - Access to the internet
 - Introductory knowledge of R & RStudio  
